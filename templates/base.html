@@ -1,0 +1,36 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{% block title %}공부시간 기록기{% endblock %}</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Pretendard:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+<body>
+  <div class="app-shell">
+    <header class="site-header">
+      <div class="header-inner container">
+        <a href="{% url 'study:list' %}" class="brand">Study Tracker</a>
+        <nav class="main-nav">
+          <a href="{% url 'study:list' %}">홈</a>
+        </nav>
+      </div>
+    </header>
+ 
+    <main class="site-main">
+      {% block content %}{% endblock %}
+    </main>
+ 
+    <footer class="site-footer">
+      <div class="container footer-inner">
+        <p>꾸준한 기록이 결국 큰 성장을 만듭니다.</p>
+        <p class="footer-sub">Django 반복훈련 1 - 공부시간 기록기</p>
+      </div>
+    </footer>
+  </div>
+</body>
+</html>
